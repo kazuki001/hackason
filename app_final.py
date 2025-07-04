@@ -256,7 +256,7 @@ if st.session_state["authentication_status"]:
             with st.form("new_camera_form_with_map", clear_on_submit=True):
                 coords = st.session_state.map_center
                 st.write(f"**選択中の座標**: `緯度 {coords[0]:.5f}, 経度 {coords[1]:.5f}`")
-                new_location = st.text_input("この場所の名前 *", placeholder="例: 矢橋帰帆島公園")
+                new_location = st.text_input("この場所の名前 *", placeholder="例: 大阪城")
                 new_video_source = st.text_input("動画パスまたはカメラ番号 *", placeholder="例: my_video.mp4 or 0")
                 new_threshold = st.number_input("通知しきい値（匹）", min_value=1, value=5)
                 
