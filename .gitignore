@@ -1,0 +1,5 @@
+# 仮想環境フォルダ
+.venv/
+
+# サービスアカウントの秘密鍵
+serviceAccountKey.json

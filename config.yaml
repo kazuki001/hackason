@@ -1,0 +1,12 @@
+cookie:
+  expiry_days: 30
+  key: a_secret_key_for_your_app
+  name: some_random_cookie_name
+credentials:
+  usernames:
+    aaa:
+      email: aaa@aaa
+      name: aaa
+      password: $2b$12$ulOqAqGE2nxnZ64Nmv65JOfru91GCI9BgCiaGVShcVYWecwAXTzcC
+preauthorized:
+  emails: []
