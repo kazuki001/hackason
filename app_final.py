@@ -319,7 +319,6 @@ if st.session_state["authentication_status"]:
                 st.sidebar.success("解析を実行中...")
                 video_source = selected_camera_info.get('video_source')
                 
-                ### 修正箇所1: トラッキングIDを記憶するセットを初期化 ###
                 if f'seen_ids_{camera_id}' not in st.session_state:
                     st.session_state[f'seen_ids_{camera_id}'] = set()
 
@@ -338,7 +337,6 @@ if st.session_state["authentication_status"]:
                             st.session_state.running_camera = None
                             break
                         
-                        ### 修正箇所2: predictをtrackに変更し、新規IDのみをカウント ###
                         results = model.track(frame, persist=True, conf=confidence_threshold, classes=[0], verbose=False)
                         annotated_frame = results[0].plot()
 
@@ -353,7 +351,6 @@ if st.session_state["authentication_status"]:
                                     newly_detected_count += 1 # 新規検出としてカウント
                         
                         detected_count = newly_detected_count # ログに記録する数を新規検出数に置き換え
-                        ### 修正ここまで ###
 
                         if detected_count > 0 and mqtt_client:
                             mqtt_client.publish(MQTT_TOPIC, "OPEN")
